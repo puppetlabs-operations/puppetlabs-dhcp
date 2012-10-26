@@ -1,4 +1,3 @@
-# BEGIN ddns (Dynamic DNS Updates)
 <% if @dnsupdatekey -%>
 # ----------
 # Dynamic DNS Updates
@@ -16,7 +15,8 @@ zone <%= dom %>. {
   key <%= dnsupdatekey.split('/').last %>;
 }
 <% end -%>
+
 <% else -%>
 ddns-update-style none;
+
 <% end -%>
-# END ddns (Dynamic DNS Updates)
