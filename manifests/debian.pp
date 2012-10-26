@@ -4,6 +4,8 @@
 class dhcp::debian {
   include dhcp::params
 
+  $packagename     = $dhcp::params::packagename
+  $servicename     = $dhcp::params::servicename
   $dhcp_interfaces = $dhcp::dhcp_interfaces
 
   case $operatingsystem {
