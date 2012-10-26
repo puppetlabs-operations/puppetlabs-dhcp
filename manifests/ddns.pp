@@ -1,9 +1,9 @@
 class dhcp::ddns (
   $enable         = true,
   $dhcp_conf_ddns = 'dhcp/dhcpd.conf.ddns.erb',   # default template
-  $zonemaster,
-  $key,
-  $domains
+  $zonemaster     = $fqdn,
+  $key            = '',
+  $domains        = [ $domain ]
 ) {
 
   include dhcp::params
