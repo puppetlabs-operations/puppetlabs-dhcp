@@ -14,8 +14,8 @@ zone <%= dom %>. {
   primary <%= nameservers.first %>;
   key <%= dnsupdatekey.split('/').last %>;
 }
-<% end -%>
 
+<% end -%>
 <% else -%>
 ddns-update-style none;
 
