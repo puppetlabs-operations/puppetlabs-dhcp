@@ -4,6 +4,8 @@
 class dhcp::debian {
   include dhcp::params
 
+  $dhcp_interfaces = $dhcp::dhcp_interfaces
+
   case $operatingsystem {
     'debian','ubuntu': {
       file{ '/etc/default/isc-dhcp-server':
