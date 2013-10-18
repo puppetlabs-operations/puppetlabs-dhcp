@@ -1,4 +1,4 @@
-class isc_dhcp::params {
+class dhcp::params {
 
   case $operatingsystem {
     'debian': {
@@ -34,4 +34,5 @@ class isc_dhcp::params {
       $servicename = 'dhcpd'
     }
   }
+
 }

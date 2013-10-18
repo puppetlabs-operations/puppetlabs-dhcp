@@ -1,20 +1,21 @@
-define isc_dhcp::pool (
+define dhcp::pool (
   $network,
   $mask,
   $range,
   $gateway,
   $failover   = '',
   $options    = '',
-  $parameters = '',
-  $dhcp_dir   = $isc_dhcp::dhcp_dir,
-) inherits isc_dhcp::params {
+  $parameters = ''
+) {
 
-  unless defined(Class['isc_dhcp']) {
-    fail('Must declare the class isc_dhcp before defining an isc_dhcp::pool')
-  }
+  include dhcp::params
+
+  $dhcp_dir = $dhcp::params::dhcp_dir
 
   concat::fragment { "dhcp_pool_${name}":
     target  => "${dhcp_dir}/dhcpd.pools",
-    content => template("${module_name}/dhcpd.pool.erb"),
+    content => template('dhcp/dhcpd.pool.erb'),
   }
+
 }
+
