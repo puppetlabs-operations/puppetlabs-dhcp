@@ -1,10 +1,11 @@
 # ----------
 # Remove and Disable the DHCP server
 # ----------
-class isc_dhcp::disable(
-  $packagename = $isc_dhcp::params::packagename,
-  $servicename = $isc_dhcp::params::servicename,
-) inherits isc_dhcp::params {
+class dhcp::disable {
+  include dhcp::params
+
+  $packagename = $dhcp::params::packagename
+  $servicename = $dhcp::params::servicename
 
   package { $packagename:
     ensure => absent,
@@ -16,5 +17,6 @@ class isc_dhcp::disable(
     hasstatus => true,
     require   => Package[$packagename],
   }
+
 }
 
