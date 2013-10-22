@@ -15,6 +15,7 @@ class dhcp (
   $pxefilename         = undef,
   $logfacility         = 'daemon',
   $default_lease_time  = 3600,
+  $min_lease_time      = 86400,
   $max_lease_time      = 86400,
   $failover            = '',
   $ddns                = false
