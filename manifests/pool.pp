@@ -3,9 +3,10 @@ define dhcp::pool (
   $mask,
   $range,
   $gateway,
-  $failover   = '',
-  $options    = '',
-  $parameters = ''
+  $failover   = undef,
+  $options    = undef,
+  $parameters = undef,
+  $special    = undef,
 ) {
 
   include dhcp::params
@@ -16,6 +17,4 @@ define dhcp::pool (
     target  => "${dhcp_dir}/dhcpd.pools",
     content => template('dhcp/dhcpd.pool.erb'),
   }
-
 }
-

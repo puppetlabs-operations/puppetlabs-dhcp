@@ -4,7 +4,6 @@
 define dhcp::host (
   $ip,
   $mac,
-  $comment=''
 ) {
 
   $host = $name

@@ -11,7 +11,7 @@ class dhcp::failover (
   $mclt                = '300',
   $load_split          = '128',
   $load_balance        = '3',
-  $omapi_key           = ''
+  $omapi_key           = '',
 ) {
 
   include dhcp::params
