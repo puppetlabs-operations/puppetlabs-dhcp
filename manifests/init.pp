@@ -123,6 +123,4 @@ class dhcp (
     restart   => "${dhcpd} -t && service ${servicename} restart",
   }
 
-  include dhcp::monitor
-
 }
